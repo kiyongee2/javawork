@@ -1,0 +1,11 @@
+package objectarray.dogs;
+
+public class DogArray {
+
+	public static void main(String[] args) {
+		// Dog 인스턴스 4개를 생성해서 배열에 저장하고
+		// 정보를 출력하세요(get()함수 사용)
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package transport;
+
+public class TransportTest {
+
+	public static void main(String[] args) {
+		Person p1 = new Person("인비", 10000);
+		
+		Bus bus740 = new Bus(740);
+		p1.takeBus(bus740);
+		p1.showPersonInfo();
+	}
+
+}

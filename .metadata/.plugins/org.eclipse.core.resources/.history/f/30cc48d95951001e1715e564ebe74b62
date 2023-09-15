@@ -1,0 +1,10 @@
+package test;
+
+public class StringBuilderTest {
+
+	public static void main(String[] args) {
+		String javaStr = new String("java");
+		System.out.println(System.identityHashCode(javaStr));
+	}
+
+}

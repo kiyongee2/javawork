@@ -1,0 +1,7 @@
+package thissamples;
+
+public class BirthDay {
+	int day;
+	int month;
+	int year;
+}
