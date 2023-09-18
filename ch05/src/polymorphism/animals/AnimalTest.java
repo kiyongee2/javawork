@@ -41,7 +41,7 @@ public class AnimalTest {
 		//AnimalTest 객체 생성
 		AnimalTest aTest = new AnimalTest();
 		
-		//Animal 타입으로 객체 생성
+		//Animal 타입으로 객체 생성(다형성)
 		Animal human = new Human();
 		Animal eagle = new Eagle();
 		Animal tiger = new Tiger();
@@ -50,6 +50,9 @@ public class AnimalTest {
 		aTest.moveAnimal(human);  //Animal animal = new Human
 		aTest.moveAnimal(eagle);
 		aTest.moveAnimal(tiger);
+		
+		//moveAnimal(human);  //static을 붙인 경우 호출한 상황
+		
 	}
 
 }

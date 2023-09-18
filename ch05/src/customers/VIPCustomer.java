@@ -1,5 +1,6 @@
 package customers;
 
+//고객 - VIP 고객
 public class VIPCustomer extends Customer{
 	private int agentId;    //전문 상담원 
 	double saleRatio;       //구매 할인율

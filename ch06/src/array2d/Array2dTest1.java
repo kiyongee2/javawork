@@ -7,8 +7,8 @@ public class Array2dTest1 {
 		int[][] arr = new int[2][3];
 		
 		System.out.println(arr.length);     //행의 크기
-		System.out.println(arr[0].length);  //1열의 크기
-		System.out.println(arr[1].length);  //2열의 크기
+		System.out.println(arr[0].length);  //1행의 1열의 크기
+		System.out.println(arr[1].length);  //1행의 2열의 크기
 		
 		//전체 출력
 		for(int i = 0; i < arr.length; i++) {
@@ -29,7 +29,8 @@ public class Array2dTest1 {
 		//선언과 함께 초기화
 		int[][] arr2 = {
 			{1, 2, 3},
-			{4, 5, 6}
+			{4, 5, 6},
+			{7, 8}
 		};
 		
 		//특정한 요소를 인덱싱
