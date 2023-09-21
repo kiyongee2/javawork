@@ -4,12 +4,12 @@ public class HeapSort implements Sort{
 
 	@Override
 	public void ascending(int[] numbers) {
-		System.out.println("QuickSort ascending");
+		System.out.println("HeapSort ascending");
 	}
 
 	@Override
 	public void descending(int[] numbers) {
-		System.out.println("QuickSort descending");
+		System.out.println("HeapSort descending");
 	}
 	
 	@Override

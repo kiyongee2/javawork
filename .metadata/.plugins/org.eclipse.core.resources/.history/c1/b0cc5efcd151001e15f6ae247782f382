@@ -1,9 +1,0 @@
-package protectedex.pack1;
-
-public class A {
-	String field;
-	
-	A(){}
-	
-	void method() {}
-}

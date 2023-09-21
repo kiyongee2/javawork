@@ -27,8 +27,8 @@ public class CalendarTest {
 		
 		String[] days = {"일요일", "월요일", "화요일", "수요일", "목요일",
 				"금요일", "토요일"};
-		System.out.println(days[0]);
-		System.out.println(days[day-1]);
+		//System.out.println(days[0]);
+		System.out.println("오늘의 요일: " + days[day-1]);
 		
 		//시간
 		System.out.println(cal.get(Calendar.HOUR) + "시");
