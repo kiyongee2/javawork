@@ -6,7 +6,15 @@ import java.util.Collections;
 public class ArraysTest {
 
 	public static void main(String[] args) {
+		//Arrays 클래스 - 배열을 쉽고 효율적으로 처리하는 기능
 		Integer[] num1 = {3, 1, 2, 4, 5};
+		//int[] num1 = {3, 1, 2, 4, 5};
+		
+		System.out.println(num1);
+		System.out.println(Arrays.toString(num1));
+		
+		/*for(Integer num : num1)
+			System.out.println(num);*/
 	
 		//오름차순 정렬 - Arrays.sort()
 		Arrays.sort(num1);
