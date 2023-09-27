@@ -21,8 +21,8 @@ public class StackCoinTest {
 		coinBox.push(coin10);
 		
 		//맨 위의 10원이 꺼내짐
-		int coin1 = coinBox.pop().getMoney();
-		System.out.println(coin1);
+		//int coin1 = coinBox.pop().getMoney();
+		//System.out.println(coin1);
 		
 		//전체 객체 출력(꺼내기) - 밖으로 나오면서 삭제[10 - 50 - 100 - 500]
 		while(!coinBox.isEmpty()) { //비어있지 않으면

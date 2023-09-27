@@ -3,7 +3,7 @@ package threads.threadname;
 public class ThreadA extends Thread{
 	
 	public ThreadA() {
-		this.setName("ThreadA");
+		this.setName("chatThread");
 	}
 
 	@Override
