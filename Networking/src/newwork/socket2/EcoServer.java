@@ -58,7 +58,7 @@ public class EcoServer {
 						//클라이언트가 보낸 데이터 받기(읽기)
 						InputStream is = socket.getInputStream();
 						byte[] bytes = new byte[1024]; //데이터를 저장할 배열 선언
-						int readBytes = is.read(bytes);
+						int readBytes = is.read(bytes); //데이터를 읽은 바이트수
 						//데이터를 문자열로 생성 - 디코딩
 						String message = new String(bytes, 0, readBytes, "utf-8");
 						
