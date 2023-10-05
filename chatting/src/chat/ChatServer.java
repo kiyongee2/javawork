@@ -22,7 +22,7 @@ public class ChatServer {
 		
 	////멀티 스레드 환경 : 채팅방 맵 객체 - chatRoom
 	//Map<String, SocketClient> chatRoom = new Hashtable<>(); 
-	
+	//동기화된 맵 컬렉션
 	Map<String, SocketClient> chatRoom = 
 			Collections.synchronizedMap(new HashMap<>());
 	
@@ -74,9 +74,10 @@ public class ChatServer {
 		//values() 리턴 타입 - Collection - 외부 반복자
 		Collection<SocketClient> socketClient = chatRoom.values();
 		for(SocketClient sc : socketClient) {
-			//발신자와 동일하면 보내지 말고 다음 클라이언트를 보냄
-			if(sc == sender) continue; 
-			sc.send(json);
+			//발신자와 동일하면 보내지 말고 다른 클라이언트에게 보냄
+			//if(sc == sender) continue; 
+			if(sc != sender)
+				sc.send(json);
 		}
 	}
 	
