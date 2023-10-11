@@ -35,6 +35,7 @@ public class NewsClient {
 						receivePacket.getLength(), "utf-8");
 			    System.out.println(news);
 			    
+			    //뉴스10이 포함된 문자열이 있으면.. contains()-String의 문자열 메서드
 			    if(news.contains("뉴스10")) break;
 			} //while 끝(while문은 break를 사용해야 에러 없음)
 			datagramSocket.close();
