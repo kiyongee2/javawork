@@ -1,12 +1,13 @@
 package dbcrud;
 
-import java.io.IOException;
+import java.io.FileInputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class UserInsertTest {
+public class BoardInsertTest {
 
 	public static void main(String[] args) {
 		Connection conn = null;   //네트워크 연결 클래스
@@ -24,15 +25,20 @@ public class UserInsertTest {
 			
 			//db 처리 작업
 			//매개 변수화된 sql문 작성 - 동적 바인딩
-			String sql = "INSERT INTO users(userid, username, userpassword, userage, useremail) "
-					+ "VALUES (?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO boards (bno, btitle, bcontent, bwriter, bdate, bfilename, bfiledata) "
+					+ "VALUES (seq_bno.NEXTVAL, ?, ?, ?, SYSDATE, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			//? 값 지정
-			pstmt.setString(1, "sky123");
-			pstmt.setString(2, "최하늘");
-			pstmt.setString(3, "u12345");
-			pstmt.setInt(4, 28);
-			pstmt.setString(5, "sky123@cloud.com");
+			pstmt.setString(1, "notebook2");
+			pstmt.setString(2, "LG 그램 노트북2");
+			pstmt.setString(3, "sky123");
+			//사진 첨부한 경우
+			//pstmt.setString(4, "notebook.PNG");
+			//pstmt.setBlob(5, new FileInputStream("src/dbcrud/notebook.PNG"));
+			//사진 미첨부인 경우
+			pstmt.setString(4, null);
+			Blob blob = null;
+			pstmt.setBlob(5, blob);
 			
 			//sql 실행
 			int rows = pstmt.executeUpdate();
@@ -50,6 +56,7 @@ public class UserInsertTest {
 				}
 			}
 		}
-	}//main 끝
+
+	}
 
 }

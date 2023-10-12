@@ -46,9 +46,18 @@ public class UserSelectAllTest {
 				userList.add(user);
 			}
 			
-			for(int i=0; i<userList.size(); i++) {
+			/*for(int i=0; i<userList.size(); i++) {
 				User user = userList.get(i);
 				//System.out.println(user);
+				System.out.println("userId: " + user.getUserId());
+				System.out.println("userName: " + user.getUserName());
+				System.out.println("userPassword: " + user.getUserPassword());
+				System.out.println("userAge: " + user.getUserAge());
+				System.out.println("userEmail: " + user.getUserEmail());
+				System.out.println("==============================");
+			}*/
+			
+			for(User user : userList) {
 				System.out.println("userId: " + user.getUserId());
 				System.out.println("userName: " + user.getUserName());
 				System.out.println("userPassword: " + user.getUserPassword());
