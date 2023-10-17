@@ -208,18 +208,27 @@ public class AccountDAO {
 			String ano = scanner.nextLine();
 		
 			if(findAccount(ano) != null) { //찾는 계좌가 있으면
-				try {
-					conn = JDBCUtil.getConnection();
-					String sql = "DELETE FROM account WHERE ano = ?";
-					pstmt = conn.prepareStatement(sql);
-					pstmt.setString(1, ano);
-					//sql 실행
-					pstmt.executeUpdate();
-					System.out.println("결과: 정상 처리되었습니다.");
-				} catch (SQLException e) {
-					e.printStackTrace();
-				} finally {
-					JDBCUtil.close(conn, pstmt);
+				//확인, 취소 메뉴 만들기
+				System.out.println("1.OK | 2.Cancel");
+				String menuNo = scanner.nextLine();
+				//int menuNo = Integer.parseInt(scanner.nextLine());
+				if(menuNo.equals("1")) {
+				//if(menuNo == 1) {
+					try {
+						conn = JDBCUtil.getConnection();
+						String sql = "DELETE FROM account WHERE ano = ?";
+						pstmt = conn.prepareStatement(sql);
+						pstmt.setString(1, ano);
+						//sql 실행
+						pstmt.executeUpdate();
+						System.out.println("결과: 정상 처리되었습니다.");
+					} catch (SQLException e) {
+						e.printStackTrace();
+					} finally {
+						JDBCUtil.close(conn, pstmt);
+					}
+				}else {
+					System.out.println("삭제를 취소합니다.");
 				}
 				break;
 			}else {
@@ -240,7 +249,12 @@ public class AccountDAO {
 			String ano = scanner.nextLine();
 		
 			if(findAccount(ano) != null) { //찾는 계좌가 있으면
-				//db 처리
+				Account account = findAccount(ano); //계좌 객체 생성
+				
+				System.out.println("1개의 계좌를 찾았습니다.");
+				System.out.print("계좌번호: " + account.getAno() + "\t");
+				System.out.print("계좌주: " + account.getOwner() + "\t");
+				System.out.println("잔고: " + account.getBalance());
 				break;
 			}else {
 				System.out.println("결과: 계좌가 없습니다. 다시 입력해 주세요");
